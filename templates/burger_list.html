@@ -1,7 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
+<head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
 <body>
     <h1>pyburger의 햄버거 목록입니다</h1>
     <h2>삐쀼삐</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>가격</th>
+                <th>칼로리</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for burger in burgers %}
+                <tr>
+                    <td>{{ burger.name }}</td>
+                    <td>{{ burger.price }}원</td>
+                    <td>{{ burger.calories }}kcal</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
